@@ -4,10 +4,17 @@ import { AuthGuard } from 'src/guard/auth.guard';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
 import { ClassValidatorPipe } from 'src/pipes/validation.pipe';
+import { UserDataService } from './userData.service';
+import { CreateFoodConsumedDto } from 'src/food/dto/create-foodConsumed.dto';
+import { UserData } from 'src/guard/userData.decorator';
+import { User } from './entities/user.entity';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly userDataService: UserDataService,
+  ) {}
 
   @UsePipes(new ClassValidatorPipe())
   @Post('/login')
@@ -19,5 +26,14 @@ export class UserController {
   @Post()
   async create(@Body() user: CreateUserDto) {
     return this.userService.createUser(user);
+  }
+
+  @UseGuards(AuthGuard)
+  @Post('/addFoodConsumed')
+  addFoodConsumed(
+    @UserData() user: User,
+    foodConsumedDto: CreateFoodConsumedDto,
+  ) {
+    this.userDataService.addFoodConsumed(foodConsumedDto, user);
   }
 }
