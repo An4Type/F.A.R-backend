@@ -1,0 +1,924 @@
+{
+  "categories": {
+    "DESSERT": "Dessert",
+    "SALAD": "Salad",
+    "APPETIZER": "Appetizer",
+    "MAIN_DISH": "Main Dish",
+    "SOUP": "Soup",
+    "SNACK": "Snack",
+    "SIDE_DISH": "Side Dish",
+    "BEVERAGE": "Beverage",
+    "BREAKFAST": "Breakfast"
+  },
+  "foodItems": [
+    {
+      "name": "apple_pie",
+      "category": "DESSERT",
+      "info": "Classic American dessert made with spiced, sweetened apples baked in a flaky, buttery crust, often served with a dollop of whipped cream or ice cream.",
+      "calories": 237,
+      "fats": 11,
+      "carbohydrates": 34,
+      "proteins": 2
+    },
+    {
+      "name": "baby_back_ribs",
+      "category": "MAIN_DISH",
+      "info": "Tender pork ribs that are slow-cooked or grilled, coated with a tangy barbecue sauce for a smoky, flavorful finish.",
+      "calories": 320,
+      "fats": 24,
+      "carbohydrates": 2,
+      "proteins": 27
+    },
+    {
+      "name": "baklava",
+      "category": "DESSERT",
+      "info": "A rich and sweet dessert made with layers of phyllo pastry, finely chopped nuts, and sweetened with honey or syrup, originating from Middle Eastern and Mediterranean cuisine.",
+      "calories": 428,
+      "fats": 21,
+      "carbohydrates": 52,
+      "proteins": 4
+    },
+    {
+      "name": "beef_carpaccio",
+      "category": "APPETIZER",
+      "info": "An elegant Italian dish featuring thinly sliced raw beef drizzled with olive oil, lemon juice, and topped with Parmesan cheese and arugula.",
+      "calories": 137,
+      "fats": 5,
+      "carbohydrates": 0,
+      "proteins": 20
+    },
+    {
+      "name": "beef_tartare",
+      "category": "APPETIZER",
+      "info": "A finely chopped raw beef dish mixed with spices, egg yolk, capers, and onions, served chilled with bread or crackers.",
+      "calories": 144,
+      "fats": 10,
+      "carbohydrates": 0,
+      "proteins": 14
+    },
+    {
+      "name": "beet_salad",
+      "category": "SALAD",
+      "info": "A refreshing salad composed of roasted or boiled beets, tangy goat cheese, crunchy nuts, and a balsamic vinaigrette.",
+      "calories": 88,
+      "fats": 5,
+      "carbohydrates": 9,
+      "proteins": 3
+    },
+    {
+      "name": "beignets",
+      "category": "SNACK",
+      "info": "A New Orleans classic, these light and fluffy deep-fried pastries are generously dusted with powdered sugar and served warm.",
+      "calories": 417,
+      "fats": 25,
+      "carbohydrates": 44,
+      "proteins": 5
+    },
+    {
+      "name": "bibimbap",
+      "category": "MAIN_DISH",
+      "info": "A popular Korean dish featuring a bowl of steamed rice topped with assorted vegetables, a fried egg, sliced meat, and a flavorful gochujang sauce.",
+      "calories": 118,
+      "fats": 3,
+      "carbohydrates": 18,
+      "proteins": 5
+    },
+    {
+      "name": "bread_pudding",
+      "category": "DESSERT",
+      "info": "A comforting dessert made from cubed bread soaked in a custard mixture of eggs and milk, baked until golden and served with a sauce like vanilla or caramel.",
+      "calories": 153,
+      "fats": 4,
+      "carbohydrates": 26,
+      "proteins": 4
+    },
+    {
+      "name": "breakfast_burrito",
+      "category": "MAIN_DISH",
+      "info": "A filling wrap consisting of a large tortilla stuffed with scrambled eggs, cheese, sausage, and often potatoes, with optional salsa or hot sauce.",
+      "calories": 233,
+      "fats": 12,
+      "carbohydrates": 20,
+      "proteins": 11
+    },
+    {
+      "name": "bruschetta",
+      "category": "APPETIZER",
+      "info": "Toasted bread topped with a fresh mixture of diced tomatoes, garlic, basil, and olive oil, making for a light, flavorful appetizer.",
+      "calories": 150,
+      "fats": 7,
+      "carbohydrates": 18,
+      "proteins": 3
+    },
+    {
+      "name": "caesar_salad",
+      "category": "SALAD",
+      "info": "A classic salad featuring romaine lettuce, crunchy croutons, grated Parmesan, and a tangy Caesar dressing made with anchovies.",
+      "calories": 163,
+      "fats": 13,
+      "carbohydrates": 7,
+      "proteins": 5
+    },
+    {
+      "name": "cannoli",
+      "category": "DESSERT",
+      "info": "Crispy tubular pastries filled with a creamy mixture of ricotta cheese, often flavored with vanilla, chocolate chips, or orange zest.",
+      "calories": 324,
+      "fats": 22,
+      "carbohydrates": 24,
+      "proteins": 7
+    },
+    {
+      "name": "caprese_salad",
+      "category": "SALAD",
+      "info": "A simple Italian salad made with fresh tomatoes, mozzarella, and basil, drizzled with olive oil and balsamic vinegar.",
+      "calories": 89,
+      "fats": 7,
+      "carbohydrates": 3,
+      "proteins": 5
+    },
+    {
+      "name": "carrot_cake",
+      "category": "DESSERT",
+      "info": "A moist cake spiced with cinnamon and filled with shredded carrots, often topped with cream cheese frosting for added sweetness.",
+      "calories": 290,
+      "fats": 16,
+      "carbohydrates": 34,
+      "proteins": 3
+    },
+    {
+      "name": "ceviche",
+      "category": "APPETIZER",
+      "info": "A fresh and tangy dish featuring seafood marinated in citrus juices, mixed with diced onions, cilantro, and chili peppers.",
+      "calories": 123,
+      "fats": 3,
+      "carbohydrates": 3,
+      "proteins": 19
+    },
+    {
+      "name": "cheesecake",
+      "category": "DESSERT",
+      "info": "A decadent dessert made with a creamy cheese-based filling atop a crumbly crust, often flavored with vanilla or fruit toppings.",
+      "calories": 321,
+      "fats": 25,
+      "carbohydrates": 21,
+      "proteins": 5
+    },
+    {
+      "name": "cheese_plate",
+      "category": "SNACK",
+      "info": "An assortment of cheeses presented with accompaniments like fruits, nuts, and crackers, suitable for a light snack or appetizer.",
+      "calories": 402,
+      "fats": 33,
+      "carbohydrates": 1,
+      "proteins": 24
+    },
+    {
+      "name": "chicken_curry",
+      "category": "MAIN_DISH",
+      "info": "A flavorful dish of chicken simmered in a spiced curry sauce, commonly served with rice or bread.",
+      "calories": 172,
+      "fats": 8,
+      "carbohydrates": 5,
+      "proteins": 20
+    },
+    {
+      "name": "chicken_quesadilla",
+      "category": "MAIN_DISH",
+      "info": "A Mexican-inspired dish made by grilling a tortilla filled with cheese, chicken, and optional vegetables, then sliced into wedges.",
+      "calories": 324,
+      "fats": 17,
+      "carbohydrates": 26,
+      "proteins": 19
+    },
+    {
+      "name": "chicken_wings",
+      "category": "APPETIZER",
+      "info": "Juicy chicken wings coated in a variety of sauces, typically deep-fried and served as a finger food.",
+      "calories": 270,
+      "fats": 18,
+      "carbohydrates": 0,
+      "proteins": 25
+    },
+    {
+      "name": "chocolate_cake",
+      "category": "DESSERT",
+      "info": "Rich and moist chocolate cake often layered with chocolate frosting.",
+      "calories": 278,
+      "fats": 15,
+      "carbohydrates": 35,
+      "proteins": 4
+    },
+    {
+      "name": "chocolate_mousse",
+      "category": "DESSERT",
+      "info": "A creamy and airy dessert made from whipped chocolate and cream, often chilled.",
+      "calories": 238,
+      "fats": 16,
+      "carbohydrates": 21,
+      "proteins": 4
+    },
+    {
+      "name": "churros",
+      "category": "DESSERT",
+      "info": "Deep-fried dough pastries coated with cinnamon sugar, often served with chocolate dipping sauce.",
+      "calories": 312,
+      "fats": 18,
+      "carbohydrates": 36,
+      "proteins": 3
+    },
+    {
+      "name": "clam_chowder",
+      "category": "SOUP",
+      "info": "A creamy soup made with clams, potatoes, onions, and celery.",
+      "calories": 245,
+      "fats": 15,
+      "carbohydrates": 25,
+      "proteins": 8
+    },
+    {
+      "name": "club_sandwich",
+      "category": "SNACK",
+      "info": "A layered sandwich often with turkey, bacon, lettuce, tomato, and mayonnaise, served on toasted bread.",
+      "calories": 400,
+      "fats": 22,
+      "carbohydrates": 35,
+      "proteins": 25
+    },
+    {
+      "name": "crab_cakes",
+      "category": "APPETIZER",
+      "info": "Fried patties made from crab meat, breadcrumbs, and seasonings, typically served with a remoulade sauce.",
+      "calories": 307,
+      "fats": 17,
+      "carbohydrates": 14,
+      "proteins": 18
+    },
+    {
+      "name": "creme_brulee",
+      "category": "DESSERT",
+      "info": "A creamy vanilla custard dessert topped with a hard caramelized sugar crust.",
+      "calories": 325,
+      "fats": 18,
+      "carbohydrates": 35,
+      "proteins": 6
+    },
+    {
+      "name": "croque_madame",
+      "category": "MAIN_DISH",
+      "info": "A French sandwich made with ham, gruyere cheese, béchamel sauce, and a fried egg on top.",
+      "calories": 550,
+      "fats": 29,
+      "carbohydrates": 46,
+      "proteins": 30
+    },
+    {
+      "name": "cup_cakes",
+      "category": "DESSERT",
+      "info": "Small, individual cakes, often decorated with frosting and sprinkles, perfect for parties.",
+      "calories": 200,
+      "fats": 9,
+      "carbohydrates": 28,
+      "proteins": 3
+    },
+    {
+      "name": "deviled_eggs",
+      "category": "APPETIZER",
+      "info": "Hard-boiled eggs halved and filled with a mixture of yolks, mayonnaise, and mustard, seasoned with paprika.",
+      "calories": 80,
+      "fats": 6,
+      "carbohydrates": 1,
+      "proteins": 6
+    },
+    {
+      "name": "donuts",
+      "category": "DESSERT",
+      "info": "Fried dough pastries often coated with sugar or icing and filled with jam, cream, or chocolate.",
+      "calories": 295,
+      "fats": 18,
+      "carbohydrates": 30,
+      "proteins": 4
+    },
+    {
+      "name": "dumplings",
+      "category": "APPETIZER",
+      "info": "Dough parcels filled with meat, vegetables, or seafood, often steamed or fried.",
+      "calories": 150,
+      "fats": 8,
+      "carbohydrates": 18,
+      "proteins": 4
+    },
+    {
+      "name": "edamame",
+      "category": "SNACK",
+      "info": "Steamed or boiled young soybeans, often salted, eaten straight from the pod.",
+      "calories": 120,
+      "fats": 5,
+      "carbohydrates": 10,
+      "proteins": 10
+    },
+    {
+      "name": "eggs_benedict",
+      "category": "MAIN_DISH",
+      "info": "A dish consisting of poached eggs, Canadian bacon, and hollandaise sauce on an English muffin.",
+      "calories": 360,
+      "fats": 25,
+      "carbohydrates": 30,
+      "proteins": 13
+    },
+    {
+      "name": "escargots",
+      "category": "APPETIZER",
+      "info": "Snails cooked in garlic butter, a French delicacy, often served in their shells.",
+      "calories": 155,
+      "fats": 13,
+      "carbohydrates": 2,
+      "proteins": 11
+    },
+    {
+      "name": "falafel",
+      "category": "APPETIZER",
+      "info": "Deep-fried balls made from ground chickpeas or fava beans, mixed with herbs and spices.",
+      "calories": 333,
+      "fats": 18,
+      "carbohydrates": 30,
+      "proteins": 12
+    },
+    {
+      "name": "filet_mignon",
+      "category": "MAIN_DISH",
+      "info": "A tender cut of beef from the tenderloin, known for its fine texture and rich flavor.",
+      "calories": 287,
+      "fats": 20,
+      "carbohydrates": 0,
+      "proteins": 26
+    },
+    {
+      "name": "fish_and_chips",
+      "category": "MAIN_DISH",
+      "info": "Battered and deep-fried fish, typically served with crispy fries.",
+      "calories": 350,
+      "fats": 18,
+      "carbohydrates": 36,
+      "proteins": 14
+    },
+    {
+      "name": "foie_gras",
+      "category": "APPETIZER",
+      "info": "A French dish made from the liver of a fattened duck or goose, often served with toast or fruit compote.",
+      "calories": 460,
+      "fats": 39,
+      "carbohydrates": 3,
+      "proteins": 18
+    },
+    {
+      "name": "french_fries",
+      "category": "SIDE_DISH",
+      "info": "Thin strips of potato, deep-fried until crispy, typically served as a side dish.",
+      "calories": 312,
+      "fats": 15,
+      "carbohydrates": 41,
+      "proteins": 3
+    },
+    {
+      "name": "french_onion_soup",
+      "category": "SOUP",
+      "info": "A savory soup made with caramelized onions and beef broth, topped with a melted cheese-covered crouton.",
+      "calories": 137,
+      "fats": 9,
+      "carbohydrates": 16,
+      "proteins": 4
+    },
+    {
+      "name": "french_toast",
+      "category": "BREAKFAST",
+      "info": "Bread soaked in a mixture of eggs, milk, and cinnamon, then pan-fried until golden, often served with syrup.",
+      "calories": 232,
+      "fats": 12,
+      "carbohydrates": 30,
+      "proteins": 6
+    },
+    {
+      "name": "fried_calamari",
+      "category": "APPETIZER",
+      "info": "Deep-fried squid rings, typically served with marinara sauce or aioli.",
+      "calories": 298,
+      "fats": 20,
+      "carbohydrates": 18,
+      "proteins": 14
+    },
+    {
+      "name": "fried_rice",
+      "category": "MAIN_DISH",
+      "info": "A popular Asian dish made with stir-fried rice, vegetables, and protein such as chicken or shrimp.",
+      "calories": 214,
+      "fats": 10,
+      "carbohydrates": 26,
+      "proteins": 6
+    },
+    {
+      "name": "frozen_yogurt",
+      "category": "DESSERT",
+      "info": "A frozen dessert made from yogurt and sometimes other dairy products, with a creamy texture.",
+      "calories": 159,
+      "fats": 3,
+      "carbohydrates": 31,
+      "proteins": 5
+    },
+    {
+      "name": "garlic_bread",
+      "category": "SIDE_DISH",
+      "info": "Bread spread with a mixture of garlic, butter, and herbs, then toasted to perfection.",
+      "calories": 265,
+      "fats": 13,
+      "carbohydrates": 31,
+      "proteins": 6
+    },
+    {
+      "name": "gnocchi",
+      "category": "MAIN_DISH",
+      "info": "Small, soft dumplings made from potatoes and flour, typically served with sauce.",
+      "calories": 176,
+      "fats": 2,
+      "carbohydrates": 36,
+      "proteins": 5
+    },
+    {
+      "name": "greek_salad",
+      "category": "SALAD",
+      "info": "A refreshing salad made with tomatoes, cucumbers, olives, onions, and feta cheese, dressed with olive oil.",
+      "calories": 120,
+      "fats": 10,
+      "carbohydrates": 10,
+      "proteins": 3
+    },
+    {
+      "name": "grilled_cheese_sandwich",
+      "category": "SNACK",
+      "info": "A toasted sandwich with melted cheese, usually made with bread and butter.",
+      "calories": 291,
+      "fats": 15,
+      "carbohydrates": 28,
+      "proteins": 12
+    },
+    {
+      "name": "grilled_salmon",
+      "category": "MAIN_DISH",
+      "info": "Salmon fillets grilled to perfection, often served with a side of vegetables or salad.",
+      "calories": 206,
+      "fats": 13,
+      "carbohydrates": 0,
+      "proteins": 22
+    },
+    {
+      "name": "guacamole",
+      "category": "SNACK",
+      "info": "A creamy dip made from mashed avocado, lime, and seasonings, commonly served with chips or vegetables.",
+      "calories": 160,
+      "fats": 15,
+      "carbohydrates": 9,
+      "proteins": 2
+    },
+    {
+      "name": "gyoza",
+      "category": "APPETIZER",
+      "info": "Japanese dumplings filled with pork, cabbage, and seasonings, often served steamed or pan-fried.",
+      "calories": 133,
+      "fats": 5,
+      "carbohydrates": 18,
+      "proteins": 7
+    },
+    {
+      "name": "hamburger",
+      "category": "MAIN_DISH",
+      "info": "A beef patty served in a bun with various toppings such as lettuce, tomato, and cheese.",
+      "calories": 250,
+      "fats": 14,
+      "carbohydrates": 30,
+      "proteins": 12
+    },
+    {
+      "name": "hot_and_sour_soup",
+      "category": "SOUP",
+      "info": "A flavorful and spicy soup typically made with mushrooms, tofu, and a vinegar-based broth.",
+      "calories": 50,
+      "fats": 1,
+      "carbohydrates": 10,
+      "proteins": 2
+    },
+    {
+      "name": "hot_dog",
+      "category": "SNACK",
+      "info": "A cooked sausage, usually made from beef or pork, served in a bun, often with mustard or ketchup.",
+      "calories": 150,
+      "fats": 12,
+      "carbohydrates": 3,
+      "proteins": 6
+    },
+    {
+      "name": "huevos_rancheros",
+      "category": "MAIN_DISH",
+      "info": "A traditional Mexican dish featuring fried eggs on corn tortillas topped with a tomato-based sauce.",
+      "calories": 320,
+      "fats": 23,
+      "carbohydrates": 18,
+      "proteins": 14
+    },
+    {
+      "name": "hummus",
+      "category": "SNACK",
+      "info": "A creamy dip made from ground chickpeas, tahini, olive oil, garlic, and lemon juice, often served with pita or vegetables.",
+      "calories": 177,
+      "fats": 10,
+      "carbohydrates": 16,
+      "proteins": 8
+    },
+    {
+      "name": "ice_cream",
+      "category": "DESSERT",
+      "info": "A sweet frozen dessert made from cream, sugar, and flavorings such as chocolate or vanilla.",
+      "calories": 207,
+      "fats": 11,
+      "carbohydrates": 24,
+      "proteins": 3
+    },
+    {
+      "name": "lasagna",
+      "category": "MAIN_DISH",
+      "info": "A baked Italian dish consisting of layers of pasta, ricotta cheese, meat sauce, and mozzarella cheese.",
+      "calories": 336,
+      "fats": 17,
+      "carbohydrates": 32,
+      "proteins": 21
+    },
+    {
+      "name": "lobster_bisque",
+      "category": "SOUP",
+      "info": "A creamy, rich soup made from lobster, typically flavored with sherry, herbs, and heavy cream.",
+      "calories": 300,
+      "fats": 21,
+      "carbohydrates": 6,
+      "proteins": 21
+    },
+    {
+      "name": "lobster_roll_sandwich",
+      "category": "MAIN_DISH",
+      "info": "A sandwich made with lobster meat, typically mixed with mayonnaise and served in a toasted hot dog bun.",
+      "calories": 436,
+      "fats": 22,
+      "carbohydrates": 37,
+      "proteins": 20
+    },
+    {
+      "name": "macaroni_and_cheese",
+      "category": "MAIN_DISH",
+      "info": "A comfort food dish made with macaroni pasta and a creamy cheese sauce.",
+      "calories": 230,
+      "fats": 10,
+      "carbohydrates": 26,
+      "proteins": 9
+    },
+    {
+      "name": "macarons",
+      "category": "DESSERT",
+      "info": "French meringue-based cookies filled with a creamy center, available in various flavors and colors.",
+      "calories": 160,
+      "fats": 6,
+      "carbohydrates": 24,
+      "proteins": 3
+    },
+    {
+      "name": "miso_soup",
+      "category": "SOUP",
+      "info": "A Japanese soup made from fermented soybean paste, often served with tofu and seaweed.",
+      "calories": 40,
+      "fats": 1,
+      "carbohydrates": 6,
+      "proteins": 3
+    },
+    {
+      "name": "mussels",
+      "category": "MAIN_DISH",
+      "info": "Shellfish commonly served steamed or in a sauce, often with garlic, white wine, and herbs.",
+      "calories": 172,
+      "fats": 4,
+      "carbohydrates": 7,
+      "proteins": 24
+    },
+    {
+      "name": "nachos",
+      "category": "SNACK",
+      "info": "Tortilla chips topped with melted cheese, often served with salsa, guacamole, or sour cream.",
+      "calories": 350,
+      "fats": 20,
+      "carbohydrates": 36,
+      "proteins": 7
+    },
+    {
+      "name": "omelette",
+      "category": "BREAKFAST",
+      "info": "A dish made from beaten eggs cooked with butter, often filled with various ingredients like vegetables, cheese, and meats.",
+      "calories": 150,
+      "fats": 12,
+      "carbohydrates": 1,
+      "proteins": 10
+    },
+    {
+      "name": "onion_rings",
+      "category": "SNACK",
+      "info": "Deep-fried batter-coated onion slices, commonly served as a side dish or snack.",
+      "calories": 420,
+      "fats": 23,
+      "carbohydrates": 54,
+      "proteins": 4
+    },
+    {
+      "name": "oysters",
+      "category": "APPETIZER",
+      "info": "Shellfish that can be served raw on the half shell or cooked in various dishes like oysters Rockefeller.",
+      "calories": 68,
+      "fats": 2,
+      "carbohydrates": 4,
+      "proteins": 7
+    },
+    {
+      "name": "pad_thai",
+      "category": "MAIN_DISH",
+      "info": "A Thai stir-fried noodle dish made with eggs, tofu or shrimp, peanuts, and bean sprouts, seasoned with tamarind and fish sauce.",
+      "calories": 200,
+      "fats": 9,
+      "carbohydrates": 27,
+      "proteins": 7
+    },
+    {
+      "name": "paella",
+      "category": "MAIN_DISH",
+      "info": "A Spanish rice dish traditionally made with saffron, seafood, and vegetables, often cooked in a single pan.",
+      "calories": 175,
+      "fats": 6,
+      "carbohydrates": 22,
+      "proteins": 8
+    },
+    {
+      "name": "pancakes",
+      "category": "BREAKFAST",
+      "info": "Fluffy, round cakes made from a batter of flour, eggs, and milk, usually served with syrup, butter, or fruit.",
+      "calories": 227,
+      "fats": 7,
+      "carbohydrates": 34,
+      "proteins": 5
+    },
+    {
+      "name": "panna_cotta",
+      "category": "DESSERT",
+      "info": "A smooth, creamy Italian dessert made from sweetened cream, set with gelatin and often topped with berries or caramel.",
+      "calories": 300,
+      "fats": 20,
+      "carbohydrates": 27,
+      "proteins": 3
+    },
+    {
+      "name": "peking_duck",
+      "category": "MAIN_DISH",
+      "info": "A famous Chinese dish made from crispy roasted duck, typically served with thin pancakes, hoisin sauce, and vegetables.",
+      "calories": 337,
+      "fats": 25,
+      "carbohydrates": 9,
+      "proteins": 22
+    },
+    {
+      "name": "pho",
+      "category": "SOUP",
+      "info": "A Vietnamese noodle soup consisting of broth, rice noodles, herbs, and meat, usually beef or chicken.",
+      "calories": 230,
+      "fats": 5,
+      "carbohydrates": 28,
+      "proteins": 17
+    },
+    {
+      "name": "pizza",
+      "category": "MAIN_DISH",
+      "info": "A popular Italian dish made with a round, flatbread topped with tomato sauce, cheese, and various toppings.",
+      "calories": 266,
+      "fats": 10,
+      "carbohydrates": 33,
+      "proteins": 11
+    },
+    {
+      "name": "pork_chop",
+      "category": "MAIN_DISH",
+      "info": "A cut of pork, often grilled or pan-fried, served with vegetables or starch like mashed potatoes.",
+      "calories": 231,
+      "fats": 15,
+      "carbohydrates": 0,
+      "proteins": 23
+    },
+    {
+      "name": "poutine",
+      "category": "SIDE_DISH",
+      "info": "A Canadian dish of french fries topped with cheese curds and smothered in gravy.",
+      "calories": 333,
+      "fats": 18,
+      "carbohydrates": 37,
+      "proteins": 7
+    },
+    {
+      "name": "prime_rib",
+      "category": "MAIN_DISH",
+      "info": "A tender cut of beef roasted to perfection, typically served with sides like mashed potatoes and vegetables.",
+      "calories": 354,
+      "fats": 25,
+      "carbohydrates": 0,
+      "proteins": 30
+    },
+    {
+      "name": "pulled_pork_sandwich",
+      "category": "MAIN_DISH",
+      "info": "A sandwich made with tender, slow-cooked pulled pork, often topped with coleslaw.",
+      "calories": 350,
+      "fats": 15,
+      "carbohydrates": 40,
+      "proteins": 22
+    },
+    {
+      "name": "ramen",
+      "category": "MAIN_DISH",
+      "info": "A Japanese noodle soup, consisting of noodles in a savory broth, often topped with meat, eggs, and vegetables.",
+      "calories": 220,
+      "fats": 9,
+      "carbohydrates": 26,
+      "proteins": 9
+    },
+    {
+      "name": "ravioli",
+      "category": "MAIN_DISH",
+      "info": "Small pasta pockets stuffed with ingredients like cheese, meat, or vegetables, typically served with a sauce.",
+      "calories": 158,
+      "fats": 5,
+      "carbohydrates": 26,
+      "proteins": 5
+    },
+    {
+      "name": "red_velvet_cake",
+      "category": "DESSERT",
+      "info": "A red-colored chocolate cake with cream cheese frosting, often decorated with sprinkles or edible pearls.",
+      "calories": 270,
+      "fats": 14,
+      "carbohydrates": 34,
+      "proteins": 5
+    },
+    {
+      "name": "risotto",
+      "category": "MAIN_DISH",
+      "info": "A creamy Italian rice dish, often cooked with stock, cheese, and various ingredients such as mushrooms, seafood, or vegetables.",
+      "calories": 260,
+      "fats": 10,
+      "carbohydrates": 35,
+      "proteins": 7
+    },
+    {
+      "name": "samosa",
+      "category": "APPETIZER",
+      "info": "A deep-fried pastry filled with spiced potatoes, peas, and sometimes meat, commonly served with a chutney.",
+      "calories": 220,
+      "fats": 11,
+      "carbohydrates": 25,
+      "proteins": 5
+    },
+    {
+      "name": "sashimi",
+      "category": "APPETIZER",
+      "info": "Thinly sliced raw fish or seafood, often served with soy sauce and wasabi.",
+      "calories": 100,
+      "fats": 2,
+      "carbohydrates": 0,
+      "proteins": 22
+    },
+    {
+      "name": "scallops",
+      "category": "MAIN_DISH",
+      "info": "Tender, delicate seafood that can be pan-seared or grilled, often served with a light sauce.",
+      "calories": 140,
+      "fats": 2,
+      "carbohydrates": 3,
+      "proteins": 24
+    },
+    {
+      "name": "seaweed_salad",
+      "category": "SALAD",
+      "info": "A light, refreshing salad made with seaweed, often dressed with sesame oil, soy sauce, and vinegar.",
+      "calories": 70,
+      "fats": 5,
+      "carbohydrates": 8,
+      "proteins": 2
+    },
+    {
+      "name": "shrimp_and_grits",
+      "category": "MAIN_DISH",
+      "info": "A Southern dish consisting of shrimp served with creamy grits, often seasoned with spices.",
+      "calories": 290,
+      "fats": 12,
+      "carbohydrates": 26,
+      "proteins": 20
+    },
+    {
+      "name": "spaghetti_bolognese",
+      "category": "MAIN_DISH",
+      "info": "A classic Italian pasta dish made with a meat-based tomato sauce, served over spaghetti.",
+      "calories": 300,
+      "fats": 15,
+      "carbohydrates": 32,
+      "proteins": 12
+    },
+    {
+      "name": "spaghetti_carbonara",
+      "category": "MAIN_DISH",
+      "info": "An Italian pasta dish made with eggs, cheese, pancetta, and pepper, creating a creamy sauce.",
+      "calories": 420,
+      "fats": 22,
+      "carbohydrates": 45,
+      "proteins": 12
+    },
+    {
+      "name": "spring_rolls",
+      "category": "APPETIZER",
+      "info": "Rice paper rolls typically filled with vegetables, shrimp, or chicken, served with a dipping sauce.",
+      "calories": 150,
+      "fats": 3,
+      "carbohydrates": 24,
+      "proteins": 8
+    },
+    {
+      "name": "steak",
+      "category": "MAIN_DISH",
+      "info": "A thick cut of beef, grilled or pan-seared, often served with a side of potatoes or vegetables.",
+      "calories": 242,
+      "fats": 18,
+      "carbohydrates": 0,
+      "proteins": 26
+    },
+    {
+      "name": "strawberry_shortcake",
+      "category": "DESSERT",
+      "info": "A layered dessert made with shortcake, fresh strawberries, and whipped cream.",
+      "calories": 280,
+      "fats": 15,
+      "carbohydrates": 35,
+      "proteins": 4
+    },
+    {
+      "name": "sushi",
+      "category": "MAIN_DISH",
+      "info": "A Japanese dish featuring vinegared rice, seafood, and sometimes vegetables, often served as rolls or sashimi.",
+      "calories": 170,
+      "fats": 3,
+      "carbohydrates": 32,
+      "proteins": 7
+    },
+    {
+      "name": "tacos",
+      "category": "MAIN_DISH",
+      "info": "A traditional Mexican dish consisting of a folded tortilla filled with various ingredients like meat, vegetables, and salsa.",
+      "calories": 290,
+      "fats": 18,
+      "carbohydrates": 22,
+      "proteins": 15
+    },
+    {
+      "name": "takoyaki",
+      "category": "SNACK",
+      "info": "Japanese street food consisting of batter-filled balls containing pieces of octopus, typically topped with takoyaki sauce.",
+      "calories": 260,
+      "fats": 14,
+      "carbohydrates": 28,
+      "proteins": 7
+    },
+    {
+      "name": "tiramisu",
+      "category": "DESSERT",
+      "info": "An Italian dessert made of layers of coffee-soaked ladyfingers, mascarpone cheese, and cocoa.",
+      "calories": 308,
+      "fats": 17,
+      "carbohydrates": 36,
+      "proteins": 6
+    },
+    {
+      "name": "tuna_tartare",
+      "category": "APPETIZER",
+      "info": "A raw dish made from finely chopped tuna, often seasoned with soy sauce, sesame oil, and citrus.",
+      "calories": 120,
+      "fats": 2,
+      "carbohydrates": 1,
+      "proteins": 23
+    },
+    {
+      "name": "waffles",
+      "category": "BREAKFAST",
+      "info": "Sweet, crisp pastries made from a batter, typically served with syrup, butter, or fruit.",
+      "calories": 290,
+      "fats": 15,
+      "carbohydrates": 35,
+      "proteins": 5
+    }
+  ]
+}
