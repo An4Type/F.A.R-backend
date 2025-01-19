@@ -1,13 +1,10 @@
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateFoodConsumedDto } from 'src/food/dto/create-foodConsumed.dto';
-import { FoodConsumed } from 'src/food/entities/foodConsumed.entity';
 import { User } from 'src/user/entities/user.entity';
 import { Repository } from 'typeorm';
 import { DayInfo } from './entity/dayInfo.entity';
 import { Nutrition } from 'src/food/entities/nutrition';
 import { Goal } from './entity/goal.entity';
-import { FoodService } from 'src/food/food.service';
 
 @Injectable()
 export class DayService {
