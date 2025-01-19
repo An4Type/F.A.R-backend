@@ -7,5 +7,5 @@ export class CreateFoodConsumedDto {
   mass: number;
 
   @IsNotEmpty()
-  food: Food;
+  foodName: string;
 }

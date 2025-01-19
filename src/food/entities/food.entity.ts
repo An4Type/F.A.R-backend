@@ -3,22 +3,45 @@ import { Nutrition } from './nutrition';
 
 export enum FoodCategory {
   MEAT = 'Meat',
+  DESSERT = 'Dessert',
+  SALAD = 'Salad',
+  APPETIZER = 'Appetizer',
+  MAIN_DISH = 'Main Dish',
+  SOUP = 'Soup',
+  SNACK = 'Snack',
+  SIDE_DISH = 'Side Dish',
+  BEVERAGE = 'Beverage',
+  BREAKFAST = 'Breakfast',
 }
 
 export type FoodProps = {
   id?: number;
-  name: string;
+  name?: string;
+  canName: string;
   category: FoodCategory;
   nutrition: Nutrition;
   info: string;
-  photo: string;
+  photo: Buffer;
 };
 
 @Entity()
 export class Food {
-  static fromProps({ id, name, nutrition, category, info, photo }: FoodProps) {
+  static fromProps({
+    id,
+    name,
+    canName,
+    nutrition,
+    category,
+    info,
+    photo,
+  }: FoodProps) {
     const food = new Food();
-    food.name = name;
+    food.name = name
+      ? name
+      : canName
+          .replace(/_/g, ' ')
+          .replace(/\b\w/g, (char) => char.toUpperCase());
+    food.canName = canName;
     food.info = info;
     food.nutrition = nutrition;
     food.photo = photo;
@@ -31,13 +54,16 @@ export class Food {
   id: number;
 
   @Column()
-  name: string;
+  name?: string;
+
+  @Column()
+  canName: string;
 
   @Column()
   info: string;
 
-  @Column()
-  photo: string;
+  @Column('bytea')
+  photo: Buffer;
 
   @Column(() => Nutrition)
   nutrition: Nutrition;

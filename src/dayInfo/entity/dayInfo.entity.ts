@@ -1,5 +1,7 @@
 import { User } from 'src/user/entities/user.entity';
 import {
+  BeforeInsert,
+  BeforeUpdate,
   Column,
   Entity,
   ManyToOne,
@@ -48,12 +50,31 @@ export class DayInfo {
   @Column({ type: 'date', default: () => 'CURRENT_DATE' })
   date: Date;
 
-  @ManyToOne(() => Goal, (goal) => goal.dayInfos)
+  @ManyToOne(() => Goal, (goal) => goal.dayInfos, { cascade: true })
   goal: Goal;
 
   @ManyToOne(() => User, (user) => user.dayInfos)
   user: User;
 
-  @OneToMany(() => FoodConsumed, (foodConsumed) => foodConsumed.dayInfo)
+  @OneToMany(() => FoodConsumed, (foodConsumed) => foodConsumed.dayInfo, {
+    cascade: true,
+  })
   foodConsumed: FoodConsumed[];
+
+  @BeforeInsert()
+  getNutrition() {
+    this.calculateNutrition();
+  }
+
+  @BeforeUpdate()
+  calculateNutrition() {
+    this.nutrition = this.foodConsumed.reduce((prev, val): Nutrition => {
+      return {
+        calories: prev.calories + val.nutrition.calories,
+        fats: prev.fats + val.nutrition.fats,
+        carbohydrates: prev.carbohydrates + val.nutrition.carbohydrates,
+        proteins: prev.proteins + val.nutrition.proteins,
+      };
+    }, Nutrition.createEmpty());
+  }
 }

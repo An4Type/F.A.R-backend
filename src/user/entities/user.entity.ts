@@ -42,7 +42,7 @@ export class User {
   @Column()
   password: string;
 
-  @OneToMany(() => DayInfo, (dayInfo) => dayInfo.user)
+  @OneToMany(() => DayInfo, (dayInfo) => dayInfo.user, { cascade: true })
   dayInfos: DayInfo[];
 
   @BeforeInsert()

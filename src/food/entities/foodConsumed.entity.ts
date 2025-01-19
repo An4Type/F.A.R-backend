@@ -16,6 +16,7 @@ export type FoodConsumedProps = {
   food: Food;
   mass: number;
   dayInfo?: DayInfo;
+  nutrition?: Nutrition;
 };
 
 @Entity()
@@ -23,6 +24,7 @@ export class FoodConsumed {
   static fromProps({ id, food, mass, dayInfo }: FoodConsumedProps) {
     const foodConsumed = new FoodConsumed();
     foodConsumed.food = food;
+    foodConsumed.nutrition = this.calculateNutrition(food, mass);
     foodConsumed.mass = mass;
     foodConsumed.dayInfo = dayInfo;
     if (id) foodConsumed.id = id;
@@ -35,7 +37,7 @@ export class FoodConsumed {
   @Column()
   mass: number;
 
-  @OneToOne(() => Food)
+  @ManyToOne(() => Food)
   @JoinColumn()
   food: Food;
 
@@ -45,10 +47,9 @@ export class FoodConsumed {
   @Column(() => Nutrition)
   nutrition: Nutrition;
 
-  @BeforeInsert()
-  calculateNutrition() {
-    const nutrition = this.food.nutrition;
-    Object.keys(nutrition).forEach((key) => nutrition[key] * this.mass);
-    this.nutrition = Nutrition.fromProps({ ...nutrition });
+  static calculateNutrition(food: Food, mass: number) {
+    const nutrition = food.nutrition;
+    Object.keys(nutrition).forEach((key) => (nutrition[key] *= mass / 100));
+    return Nutrition.fromProps({ ...nutrition });
   }
 }
