@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSourceOptions } from './data-source';
 import { FoodModule } from './food/food.module';
+import { DayModule } from './dayInfo/day.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { FoodModule } from './food/food.module';
     }),
     UserModule,
     FoodModule,
+    DayModule,
   ],
   controllers: [AppController],
   providers: [AppService],
