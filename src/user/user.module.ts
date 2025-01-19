@@ -4,11 +4,11 @@ import { UserController } from './user.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { UserDataService } from './userData.service';
-import { FoodService } from 'src/food/food.service';
-import { DayService } from 'src/dayInfo/day.service';
+import { FoodModule } from 'src/food/food.module';
+import { DayModule } from 'src/dayInfo/day.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User]), FoodService, DayService],
+  imports: [TypeOrmModule.forFeature([User]), FoodModule, DayModule],
   controllers: [UserController],
   providers: [UserService, UserDataService],
   exports: [UserService],

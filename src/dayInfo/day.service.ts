@@ -12,12 +12,8 @@ import { FoodService } from 'src/food/food.service';
 @Injectable()
 export class DayService {
   constructor(
-    @InjectRepository(FoodConsumed)
-    private readonly foodConsumedRepository: Repository<FoodConsumed>,
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
     @InjectRepository(DayInfo)
     private readonly dayInfoRepository: Repository<DayInfo>,
-    @Inject() private readonly foodService: FoodService,
   ) {}
 
   async getCreatedDayInfoForUser(user: User) {

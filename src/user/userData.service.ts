@@ -35,6 +35,6 @@ export class UserDataService {
       fullUser.dayInfos.push(dayInfo);
     }
     await this.userRepository.save(fullUser);
-    return user.dayInfos.at(-1);
+    return fullUser.dayInfos.at(-1);
   }
 }

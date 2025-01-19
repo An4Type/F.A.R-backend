@@ -40,7 +40,7 @@ export class FoodController {
     return this.foodService.getFoodList();
   }
 
-  @Get('/getFoodByCanName:foodCanName')
+  @Get('/getFoodByCanName/:foodCanName')
   async getFoodByCanName(@Param('foodCanName') foodCanName: string) {
     return this.foodService.getFoodByCanName(foodCanName);
   }

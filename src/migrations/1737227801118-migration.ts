@@ -20,7 +20,7 @@ export class Migration1737227801118 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await data.foodItems.forEach(async (val)=>{
-            await queryRunner.query(`DELETE FROM "food" WHERE name=$1`,[val.name])
+            await queryRunner.query(`DELETE FROM "food" WHERE "canName"=$1`,[val.name])
         })
     }
 

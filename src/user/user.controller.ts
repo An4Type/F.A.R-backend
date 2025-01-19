@@ -32,8 +32,8 @@ export class UserController {
   @Post('/addFoodConsumed')
   addFoodConsumed(
     @UserData() user: User,
-    foodConsumedDto: CreateFoodConsumedDto,
+    @Body() foodConsumedDto: CreateFoodConsumedDto,
   ) {
-    this.userDataService.addFoodConsumed(foodConsumedDto, user);
+    return this.userDataService.addFoodConsumed(foodConsumedDto, user);
   }
 }

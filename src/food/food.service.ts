@@ -67,7 +67,7 @@ export class FoodService implements OnModuleInit {
     });
     if (!food)
       throw new HttpException(
-        'Food with given name not found.',
+        'Food with given name not found.' + foodCanName,
         HttpStatus.NOT_FOUND,
       );
     return food;
