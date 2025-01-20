@@ -69,9 +69,9 @@ export class FoodController {
     // return this.foodService.predictByShell(file.buffer);
   }
 
-  @Get('/getFoodList')
+  @Get('/getFoodListLight')
   async getFoodList() {
-    return this.foodService.getFoodList();
+    return this.foodService.getFoodListLight();
   }
 
   @Get('/getFoodByCanName/:foodCanName')
