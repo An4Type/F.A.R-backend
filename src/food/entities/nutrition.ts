@@ -1,3 +1,4 @@
+import { IsNotEmpty, IsNumber } from 'class-validator';
 import { Column } from 'typeorm';
 
 export type NutritionProps = {
@@ -30,15 +31,24 @@ export class Nutrition {
       proteins: 0,
     });
   }
+
+  @IsNotEmpty()
+  @IsNumber()
   @Column()
   calories: number;
 
+  @IsNotEmpty()
+  @IsNumber()
   @Column()
   fats: number;
 
+  @IsNotEmpty()
+  @IsNumber()
   @Column()
   carbohydrates: number;
 
+  @IsNotEmpty()
+  @IsNumber()
   @Column()
   proteins: number;
 }

@@ -17,7 +17,7 @@ export type DayInfoProps = {
   nutrition: Nutrition;
   date?: Date;
   goal: Goal;
-  user: User;
+  user?: User;
   foodConsumed?: FoodConsumed[];
 };
 
@@ -34,9 +34,9 @@ export class DayInfo {
     const dayInfo = new DayInfo();
     dayInfo.nutrition = nutrition;
     dayInfo.goal = goal;
-    dayInfo.user = user;
     dayInfo.date = date ?? new Date();
     dayInfo.foodConsumed = foodConsumed ?? [];
+    if (user) dayInfo.user = user;
     if (id) dayInfo.id = id;
     return dayInfo;
   }
@@ -68,13 +68,15 @@ export class DayInfo {
 
   @BeforeUpdate()
   calculateNutrition() {
-    this.nutrition = this.foodConsumed.reduce((prev, val): Nutrition => {
-      return {
-        calories: prev.calories + val.nutrition.calories,
-        fats: prev.fats + val.nutrition.fats,
-        carbohydrates: prev.carbohydrates + val.nutrition.carbohydrates,
-        proteins: prev.proteins + val.nutrition.proteins,
-      };
-    }, Nutrition.createEmpty());
+    if (this.foodConsumed) {
+      this.nutrition = this.foodConsumed.reduce((prev, val): Nutrition => {
+        return {
+          calories: prev.calories + val.nutrition.calories,
+          fats: prev.fats + val.nutrition.fats,
+          carbohydrates: prev.carbohydrates + val.nutrition.carbohydrates,
+          proteins: prev.proteins + val.nutrition.proteins,
+        };
+      }, Nutrition.createEmpty());
+    }
   }
 }

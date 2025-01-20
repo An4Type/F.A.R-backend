@@ -5,6 +5,7 @@ import {
   HttpStatus,
   Patch,
   UseGuards,
+  UsePipes,
 } from '@nestjs/common';
 import { DayService } from './day.service';
 import { AuthGuard } from 'src/guard/auth.guard';
@@ -12,11 +13,8 @@ import { UserData } from 'src/guard/userData.decorator';
 import { User } from 'src/user/entities/user.entity';
 import { DayInfo } from './entity/dayInfo.entity';
 import { Nutrition } from 'src/food/entities/nutrition';
-
-type data = {
-  dayInfo: DayInfo;
-  goalDto: Nutrition;
-};
+import { ClassValidatorPipe } from 'src/pipes/validation.pipe';
+import { SetGoalDto } from './dto/set-goal.dto';
 
 @Controller('day')
 export class DayController {
@@ -28,9 +26,17 @@ export class DayController {
     return this.dayService.getDayInfoListFromUser(user);
   }
 
+  @UsePipes(new ClassValidatorPipe())
+  @UseGuards(AuthGuard)
   @Patch('/setGoalToDayInfo')
-  async setGoalToDayInfo(@Body() data: data) {
-    await this.dayService.setNewGoal(data.dayInfo, data.goalDto);
+  async setGoalToDayInfo(@UserData() user: User, @Body() goalDto: SetGoalDto) {
+    await this.dayService.setNewGoal(goalDto.dayInfoId, user, goalDto.goalDto);
     return HttpStatus.ACCEPTED;
+  }
+
+  @UseGuards(AuthGuard)
+  @Get('/getCurrentDayInfo')
+  getCurrentDayInfo(@UserData() user: User) {
+    return this.dayService.getCurrentDayInfoFromUser(user);
   }
 }

@@ -14,7 +14,7 @@ export class DayService {
   ) {}
 
   async getCreatedDayInfoForUser(user: User) {
-    const date = new Date().toISOString().split('T')[0] as unknown as Date;
+    const date = this.getCurrentDate();
     const checkDayInfo = await this.dayInfoRepository.findOne({
       where: { user: { id: user.id }, date: date },
     });
@@ -51,16 +51,45 @@ export class DayService {
     return userDayInfos;
   }
 
-  async setNewGoal(dayInfo: DayInfo, goalDto: Nutrition) {
-    const checkDayInfo = this.dayInfoRepository.findOne({
-      where: { id: dayInfo.id },
+  async getCurrentDayInfoFromUser(user: User) {
+    const userDayInfos = await this.dayInfoRepository.find({
+      where: { user: { id: user.id } },
+      relations: { goal: true, foodConsumed: { food: true } },
     });
-    if (!checkDayInfo)
+
+    if (
+      userDayInfos.length > 0 &&
+      userDayInfos.at(-1).date == this.getCurrentDate()
+    )
+      return userDayInfos.at(-1);
+    else
+      return DayInfo.fromProps({
+        nutrition: Nutrition.createEmpty(),
+        date: this.getCurrentDate(),
+        goal: Goal.fromProps({
+          nutrition:
+            userDayInfos.length == 0
+              ? Nutrition.createEmpty()
+              : userDayInfos.at(-1).goal.nutrition,
+        }),
+      });
+  }
+
+  async setNewGoal(dayInfoId: number, user: User, goalDto: Nutrition) {
+    const dayInfo = await this.dayInfoRepository.findOne({
+      where: { id: dayInfoId, user: { id: user.id } },
+    });
+    if (!dayInfo)
       throw new HttpException(
-        `DayInfo with given id wasn't found`,
+        `DayInfo with given id wasn't found in current user`,
         HttpStatus.BAD_REQUEST,
       );
     dayInfo.goal = Goal.fromProps({ nutrition: goalDto });
-    await this.dayInfoRepository.save(dayInfo.goal);
+    await this.dayInfoRepository.save(dayInfo);
+  }
+
+  getCurrentDate(): Date {
+    // return '2025-01-21' as unknown as Date;
+    return new Date().toISOString().split('T')[0] as unknown as Date;
   }
 }
