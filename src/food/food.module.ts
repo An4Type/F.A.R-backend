@@ -4,9 +4,10 @@ import { FoodService } from './food.service';
 import { FoodController } from './food.controller';
 import { Food } from './entities/food.entity';
 import { FoodConsumed } from './entities/foodConsumed.entity';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Food, FoodConsumed])],
+  imports: [TypeOrmModule.forFeature([Food, FoodConsumed]), HttpModule],
   controllers: [FoodController],
   providers: [FoodService],
   exports: [FoodService],
