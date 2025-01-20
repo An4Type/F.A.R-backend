@@ -11,7 +11,12 @@ import { DayModule } from './dayInfo/day.module';
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => {
-        return { ...DataSourceOptions, migrationsRun: false, migrations: [] };
+        return {
+          ...DataSourceOptions,
+          synchronize: false,
+          migrationsRun: false,
+          migrations: [],
+        };
       },
     }),
     UserModule,
