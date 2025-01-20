@@ -57,7 +57,7 @@ export class FoodController {
           { headers }, // Multipart headers
         )
         .toPromise();
-      res.json(
+      res.status(200).json(
         await this.foodService.getFoodFromPrediction(
           flaskResponse.data.predicted_ind,
         ),
