@@ -5,6 +5,7 @@ export class Migration1737115309688 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TABLE "goal" ("id" SERIAL NOT NULL, "nutritionCalories" integer NOT NULL, "nutritionFats" integer NOT NULL, "nutritionCarbohydrates" integer NOT NULL, "nutritionProteins" integer NOT NULL, CONSTRAINT "PK_88c8e2b461b711336c836b1e130" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE TYPE "public"."food_category_enum" AS ENUM('Meat', 'Dessert', 'Salad', 'Appetizer', 'Main Dish', 'Soup', 'Snack', 'Side Dish', 'Beverage', 'Breakfast')`);
         await queryRunner.query(`CREATE TABLE "food" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, "canName" character varying NOT NULL, "info" character varying NOT NULL, "photo" bytea NOT NULL, "category" "public"."food_category_enum" NOT NULL DEFAULT 'Meat', "nutritionCalories" integer NOT NULL, "nutritionFats" integer NOT NULL, "nutritionCarbohydrates" integer NOT NULL, "nutritionProteins" integer NOT NULL, CONSTRAINT "PK_26d12de4b6576ff08d30c281837" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TABLE "food_consumed" ("id" SERIAL NOT NULL, "mass" integer NOT NULL, "foodId" integer, "dayInfoId" integer, "nutritionCalories" integer NOT NULL, "nutritionFats" integer NOT NULL, "nutritionCarbohydrates" integer NOT NULL, "nutritionProteins" integer NOT NULL, CONSTRAINT "PK_2959e6399e885d562fa3df6b216" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TABLE "day_info" ("id" SERIAL NOT NULL, "date" date NOT NULL DEFAULT ('now'::text)::date, "goalId" integer, "userId" integer, "nutritionCalories" integer NOT NULL, "nutritionFats" integer NOT NULL, "nutritionCarbohydrates" integer NOT NULL, "nutritionProteins" integer NOT NULL, CONSTRAINT "PK_dd99ed44c093d36267535978622" PRIMARY KEY ("id"))`);
@@ -24,6 +25,7 @@ export class Migration1737115309688 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE "day_info"`);
         await queryRunner.query(`DROP TABLE "food_consumed"`);
         await queryRunner.query(`DROP TABLE "food"`);
+        await queryRunner.query(`DROP TYPE "public"."food_category_enum"`);
         await queryRunner.query(`DROP TABLE "goal"`);
     }
 

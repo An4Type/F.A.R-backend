@@ -4,6 +4,7 @@ declare global {
       ARGON_PASS: string;
       JWT_PASS: string;
       POSTGRES_DB: string;
+      POSTGRES_HOST: string;
       POSTGRES_PASSWORD: string;
       POSTGRES_USER: string;
       POSTGRES_PORT: number;

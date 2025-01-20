@@ -10,7 +10,6 @@ import { Options, PythonShell } from 'python-shell';
 import { Food } from './entities/food.entity';
 import { Repository } from 'typeorm';
 import { FoodConsumed } from './entities/foodConsumed.entity';
-import { User } from 'src/user/entities/user.entity';
 import foodMapAI from './foodMapAI.json';
 import { CreateFoodConsumedDto } from './dto/create-foodConsumed.dto';
 

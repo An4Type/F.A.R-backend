@@ -1,14 +1,58 @@
 services:
+  # PostgreSQL service (your existing database service)
   nest-database:
     image: postgres:13
-    container_name: postges_far_db
+    container_name: nest-database
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - ${POSTGRES_PORT}:5432 #Host:Container
+      - ${POSTGRES_PORT}:5432
+    healthcheck:
+      test:
+        ['CMD', 'pg_isready', '-U', '${POSTGRES_USER}', '-d', '${POSTGRES_DB}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
     volumes:
       - far_pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # Node.js service (NestJS)
+  nest-app:
+    build:
+      context: . # Build from the current directory
+    container_name: nest-app
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /usr/src/app/src
+          ignore:
+            - node_modules/
+            - dist/
+            - model/
+        - action: rebuild
+          path: package.json
+    ports:
+      - '3000:3000'
+    depends_on:
+      nest-database:
+        condition: service_healthy
+    environment:
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: nest-database # Service name used as the host
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - app-network
+
 volumes:
   far_pgdata:
+
+networks:
+  app-network:
+    driver: bridge

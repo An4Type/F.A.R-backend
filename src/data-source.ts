@@ -9,7 +9,7 @@ import { Goal } from './dayInfo/entity/goal.entity';
 dotenv.config();
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
+  host: process.env.POSTGRES_HOST,
   username: process.env.POSTGRES_USER,
   database: process.env.POSTGRES_DB,
   password: process.env.POSTGRES_PASSWORD,
