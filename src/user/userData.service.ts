@@ -17,7 +17,7 @@ export class UserDataService {
   async addFoodConsumed(foodConsumedDto: CreateFoodConsumedDto, user: User) {
     const fullUser = await this.userRepository.findOne({
       where: { id: user.id },
-      relations: { dayInfos: { foodConsumed: true, goal: true } },
+      relations: { dayInfos: { foodConsumed: { food: true }, goal: true } },
     });
     const foodConsumed =
       await this.foodService.getCreatedFoodConsumed(foodConsumedDto);

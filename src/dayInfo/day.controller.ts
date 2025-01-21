@@ -11,10 +11,10 @@ import { DayService } from './day.service';
 import { AuthGuard } from 'src/guard/auth.guard';
 import { UserData } from 'src/guard/userData.decorator';
 import { User } from 'src/user/entities/user.entity';
-import { DayInfo } from './entity/dayInfo.entity';
-import { Nutrition } from 'src/food/entities/nutrition';
 import { ClassValidatorPipe } from 'src/pipes/validation.pipe';
 import { SetGoalDto } from './dto/set-goal.dto';
+import { DayInfoResponseLight } from './dto/dayInfo-response-light.dto';
+import { plainToInstance } from 'class-transformer';
 
 @Controller('day')
 export class DayController {
@@ -24,6 +24,19 @@ export class DayController {
   @Get('/getUserDayInfoList')
   getUserDayInfoList(@UserData() user: User) {
     return this.dayService.getDayInfoListFromUser(user);
+  }
+
+  @UseGuards(AuthGuard)
+  @Get('/getUserDayInfoListLight')
+  async getUserDayInfoListLight(@UserData() user: User) {
+    const lightDayInfos: DayInfoResponseLight[] = plainToInstance(
+      DayInfoResponseLight,
+      await this.dayService.getDayInfoListFromUser(user),
+      {
+        excludeExtraneousValues: true,
+      },
+    );
+    return lightDayInfos;
   }
 
   @UsePipes(new ClassValidatorPipe())
@@ -38,5 +51,18 @@ export class DayController {
   @Get('/getCurrentDayInfo')
   getCurrentDayInfo(@UserData() user: User) {
     return this.dayService.getCurrentDayInfoFromUser(user);
+  }
+
+  @UseGuards(AuthGuard)
+  @Get('/getCurrentDayInfoLight')
+  async getCurrentDayInfoLight(@UserData() user: User) {
+    const lightDayInfo: DayInfoResponseLight = plainToInstance(
+      DayInfoResponseLight,
+      await this.dayService.getCurrentDayInfoFromUser(user),
+      {
+        excludeExtraneousValues: true,
+      },
+    );
+    return lightDayInfo;
   }
 }

@@ -13,6 +13,7 @@ import { FoodConsumed } from './entities/foodConsumed.entity';
 import foodMapAI from './foodMapAI.json';
 import { CreateFoodConsumedDto } from './dto/create-foodConsumed.dto';
 import { FoodResponseLight } from './dto/food-response-light.dto';
+import { excludeColumns } from 'src/scripts/typeorm.scrpts';
 
 // const tf = require('@tensorflow/tfjs-node');
 
@@ -81,19 +82,7 @@ export class FoodService implements OnModuleInit {
 
   async getFoodListLight(): Promise<FoodResponseLight[]> {
     const food = await this.foodRepository.find({
-      select: {
-        canName: true,
-        category: true,
-        id: true,
-        info: true,
-        name: true,
-        nutrition: {
-          calories: true,
-          carbohydrates: true,
-          fats: true,
-          proteins: true,
-        },
-      },
+      select: ['nutrition', 'canName', 'category', 'id', 'info', 'name'],
     });
     return food;
   }
