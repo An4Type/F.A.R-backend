@@ -8,6 +8,8 @@ import { UserDataService } from './userData.service';
 import { CreateFoodConsumedDto } from 'src/food/dto/create-foodConsumed.dto';
 import { UserData } from 'src/guard/userData.decorator';
 import { User } from './entities/user.entity';
+import { plainToInstance } from 'class-transformer';
+import { DayInfoResponseLight } from 'src/dayInfo/dto/dayInfo-response-light.dto';
 
 @Controller('user')
 export class UserController {
@@ -35,5 +37,20 @@ export class UserController {
     @Body() foodConsumedDto: CreateFoodConsumedDto,
   ) {
     return this.userDataService.addFoodConsumed(foodConsumedDto, user);
+  }
+
+  @UseGuards(AuthGuard)
+  @Post('/addFoodConsumedLight')
+  async addFoodConsumedLight(
+    @UserData() user: User,
+    @Body() foodConsumedDto: CreateFoodConsumedDto,
+  ) {
+    return plainToInstance(
+      DayInfoResponseLight,
+      await this.userDataService.addFoodConsumed(foodConsumedDto, user),
+      {
+        excludeExtraneousValues: true,
+      },
+    );
   }
 }
