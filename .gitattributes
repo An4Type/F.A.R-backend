@@ -1,0 +1,2 @@
+python_service/food101-vit-model/ filter=lfs diff=lfs merge=lfs -text
+python_service/food101-vit-model/**/* filter=lfs diff=lfs merge=lfs -text
