@@ -13,7 +13,6 @@ import { FoodConsumed } from './entities/foodConsumed.entity';
 import foodMapAI from './foodMapAI.json';
 import { CreateFoodConsumedDto } from './dto/create-foodConsumed.dto';
 import { FoodResponseLight } from './dto/food-response-light.dto';
-import { excludeColumns } from 'src/scripts/typeorm.scrpts';
 
 // const tf = require('@tensorflow/tfjs-node');
 
