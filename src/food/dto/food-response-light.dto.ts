@@ -1,3 +1,4 @@
+import { Expose } from 'class-transformer';
 import { FoodCategory } from '../entities/food.entity';
 import { Nutrition } from '../entities/nutrition';
 
@@ -29,10 +30,16 @@ export class FoodResponseLight {
     return foodDto;
   }
 
+  @Expose()
   id: number;
+  @Expose()
   name?: string;
+  @Expose()
   canName: string;
+  @Expose()
   category: FoodCategory;
+  @Expose()
   nutrition: Nutrition;
+  @Expose()
   info: string;
 }

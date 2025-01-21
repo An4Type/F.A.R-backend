@@ -1,3 +1,4 @@
+import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsNumber } from 'class-validator';
 import { Column } from 'typeorm';
 
@@ -32,21 +33,25 @@ export class Nutrition {
     });
   }
 
+  @Expose()
   @IsNotEmpty()
   @IsNumber()
   @Column()
   calories: number;
 
+  @Expose()
   @IsNotEmpty()
   @IsNumber()
   @Column()
   fats: number;
 
+  @Expose()
   @IsNotEmpty()
   @IsNumber()
   @Column()
   carbohydrates: number;
 
+  @Expose()
   @IsNotEmpty()
   @IsNumber()
   @Column()

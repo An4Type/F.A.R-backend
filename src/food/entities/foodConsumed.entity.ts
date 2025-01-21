@@ -24,7 +24,7 @@ export class FoodConsumed {
   static fromProps({ id, food, mass, dayInfo }: FoodConsumedProps) {
     const foodConsumed = new FoodConsumed();
     foodConsumed.food = food;
-    foodConsumed.nutrition = this.calculateNutrition(food, mass);
+    foodConsumed.nutrition = this.calculateNutrition(food.nutrition, mass);
     foodConsumed.mass = mass;
     foodConsumed.dayInfo = dayInfo;
     if (id) foodConsumed.id = id;
@@ -47,9 +47,9 @@ export class FoodConsumed {
   @Column(() => Nutrition)
   nutrition: Nutrition;
 
-  static calculateNutrition(food: Food, mass: number) {
-    const nutrition = food.nutrition;
-    Object.keys(nutrition).forEach((key) => (nutrition[key] *= mass / 100));
-    return Nutrition.fromProps({ ...nutrition });
+  static calculateNutrition(nutrition: Nutrition, mass: number) {
+    const newNutrition = Object.assign({}, nutrition);
+    Object.keys(nutrition).forEach((key) => (newNutrition[key] *= mass / 100));
+    return Nutrition.fromProps({ ...newNutrition });
   }
 }
