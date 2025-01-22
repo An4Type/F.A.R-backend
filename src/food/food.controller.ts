@@ -25,8 +25,10 @@ export class FoodController {
   @Post('/getFoodByPhoto')
   @UseInterceptors(
     FileInterceptor('photo', {
-      limits: { fileSize: 1024 * 1024 * 5 },
+      limits: { fileSize: 2024 * 2024 * 5 },
       fileFilter: (req, file, callback) => {
+        console.log('sus');
+        callback(null, true);
         const allowedTypes = ['image/jpeg', 'image/png'];
         if (allowedTypes.includes(file.mimetype)) {
           callback(null, true);
@@ -37,6 +39,7 @@ export class FoodController {
     }),
   )
   async getPrediction(@UploadedFile() file: Express.Multer.File, @Res() res) {
+    console.log('ebat nakonec');
     if (!file) {
       throw new BadRequestException('No file uploaded');
     }
@@ -57,11 +60,13 @@ export class FoodController {
           { headers }, // Multipart headers
         )
         .toPromise();
-      res.status(200).json(
-        await this.foodService.getFoodFromPrediction(
-          flaskResponse.data.predicted_ind,
-        ),
-      );
+      res
+        .status(200)
+        .json(
+          await this.foodService.getFoodFromPrediction(
+            flaskResponse.data.predicted_ind,
+          ),
+        );
     } catch (error) {
       console.error('Error communicating with Flask:', error);
       res.status(500).json({ error: 'Internal Server Error' });
@@ -71,6 +76,7 @@ export class FoodController {
 
   @Get('/getFoodListLight')
   async getFoodList() {
+    console.log('hello');
     return this.foodService.getFoodListLight();
   }
 
